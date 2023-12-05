@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li v-if="load">
     <p>
       <span class="highlight">{{ name }}</span> rated the learning experience
       <span :class="ratingClass">{{ rating }}</span>.
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props: ['name', 'rating'],
+  props: ['name', 'rating','load'],
   computed: {
     ratingClass() {
       return 'highlight rating--' + this.rating;
